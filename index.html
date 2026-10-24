@@ -29,12 +29,12 @@
 
         .ambient-light {
             position: fixed;
-            width: 60vw;
-            height: 60vw;
+            width: 80vw;
+            height: 80vw;
             border-radius: 50%;
             background: radial-gradient(circle, rgba(0, 242, 254, 0.08) 0%, rgba(255, 153, 0, 0.05) 50%, transparent 70%);
             top: -20vw;
-            left: 20vw;
+            left: 10vw;
             pointer-events: none;
             z-index: 0;
             filter: blur(80px);
@@ -44,7 +44,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 24px 6vw;
+            padding: 16px 5vw;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -56,8 +56,8 @@
 
         .logo {
             font-weight: 900;
-            font-size: 1.5rem;
-            letter-spacing: 3px;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
             color: #fff;
             background: linear-gradient(135deg, #fff, var(--teal));
             -webkit-background-clip: text;
@@ -66,14 +66,14 @@
 
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 20px;
             list-style: none;
         }
 
         .nav-links a {
             color: #a0a0b0;
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             letter-spacing: 1px;
             transition: color 0.3s;
         }
@@ -86,22 +86,23 @@
             background: linear-gradient(135deg, var(--teal), #4facfe);
             color: #000;
             font-weight: 700;
-            padding: 12px 28px;
+            padding: 10px 20px;
+            font-size: 0.8rem;
             border-radius: 30px;
             border: none;
             cursor: pointer;
-            box-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.4);
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .cta-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 0 35px rgba(0, 242, 254, 0.7);
+            box-shadow: 0 0 25px rgba(0, 242, 254, 0.7);
         }
 
         .hero {
             position: relative;
-            height: 250vh;
+            height: 220vh;
         }
 
         .sticky-wrapper {
@@ -113,33 +114,35 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
+            padding: 0 16px;
         }
 
         .hero-heading {
             position: absolute;
-            top: 15%;
+            top: 12%;
             text-align: center;
             z-index: 10;
             transition: opacity 0.3s;
+            width: 90%;
         }
 
         .hero-heading h1 {
-            font-size: clamp(2rem, 5vw, 4rem);
+            font-size: clamp(1.8rem, 6vw, 3.8rem);
             font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 12px;
+            line-height: 1.2;
+            margin-bottom: 8px;
         }
 
         .hero-heading p {
             color: #8a8a9e;
-            font-size: 1rem;
-            letter-spacing: 2px;
+            font-size: clamp(0.85rem, 2.5vw, 1.05rem);
+            letter-spacing: 1px;
         }
 
         .assembly-stage {
             position: relative;
             width: 100%;
-            height: 400px;
+            height: 320px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -147,13 +150,13 @@
 
         .trade-card {
             position: absolute;
-            width: 280px;
-            height: 360px;
+            width: clamp(200px, 68vw, 280px);
+            height: clamp(270px, 80vw, 360px);
             background: var(--card-bg);
-            border-radius: 20px;
+            border-radius: 16px;
             border: 1px solid var(--border);
             backdrop-filter: blur(20px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.8);
             display: flex;
             flex-direction: column;
             overflow: hidden;
@@ -162,339 +165,11 @@
         }
 
         .card-left {
-            transform: translateX(-100vw) rotate(-25deg);
+            transform: translateX(-100vw) rotate(-20deg);
         }
 
         .card-right {
-            transform: translateX(100vw) rotate(25deg);
+            transform: translateX(100vw) rotate(20deg);
         }
 
-        .card-img-placeholder {
-            width: 100%;
-            height: 60%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #0f101b;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .card-info {
-            padding: 18px;
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
-
-        .card-tag {
-            font-size: 0.75rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            font-weight: 700;
-        }
-
-        .card-left .card-tag { color: var(--teal); }
-        .card-right .card-tag { color: var(--amber); }
-
-        .card-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-        }
-
-        .card-val {
-            font-size: 0.85rem;
-            color: #7a7a8c;
-        }
-
-        .match-glow {
-            position: absolute;
-            font-size: clamp(2rem, 6vw, 4.5rem);
-            font-weight: 900;
-            letter-spacing: 6px;
-            background: linear-gradient(135deg, var(--teal), #fff, var(--amber));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            opacity: 0;
-            transform: scale(0.5);
-            transition: opacity 0.5s, transform 0.5s;
-            pointer-events: none;
-            z-index: 20;
-            text-shadow: 0 0 50px rgba(0, 242, 254, 0.6);
-        }
-
-        .match-glow.active {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        .value-bar-container {
-            position: absolute;
-            bottom: 12%;
-            width: 320px;
-            height: 6px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 10px;
-            overflow: hidden;
-            opacity: 0;
-            transition: opacity 0.4s;
-        }
-
-        .value-bar-fill {
-            height: 100%;
-            width: 0%;
-            background: linear-gradient(90deg, var(--teal), var(--amber));
-            transition: width 0.1s linear;
-        }
-
-        .section {
-            position: relative;
-            z-index: 10;
-            padding: 100px 8vw;
-            max-width: 1300px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #fff, #8a8a9e);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .feature-card {
-            background: rgba(15, 15, 24, 0.6);
-            border: 1px solid var(--border);
-            padding: 35px;
-            border-radius: 16px;
-            backdrop-filter: blur(10px);
-            transition: transform 0.3s, border-color 0.3s;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(0, 242, 254, 0.3);
-        }
-
-        .feature-icon {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .feature-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 12px;
-        }
-
-        .feature-card p {
-            color: #8a8a9e;
-            line-height: 1.6;
-            font-size: 0.95rem;
-        }
-
-        .market-scroll {
-            display: flex;
-            gap: 24px;
-            overflow-x: auto;
-            padding: 20px 0;
-            scrollbar-width: none;
-        }
-
-        .market-scroll::-webkit-scrollbar {
-            display: none;
-        }
-
-        .market-card {
-            min-width: 260px;
-            background: rgba(20, 20, 32, 0.8);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 16px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .market-card .card-img-placeholder {
-            height: 180px;
-            border-radius: 10px;
-        }
-
-        footer {
-            border-top: 1px solid var(--border);
-            padding: 40px 8vw;
-            text-align: center;
-            color: #6a6a7a;
-            font-size: 0.85rem;
-            margin-top: 100px;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="ambient-light"></div>
-
-    <nav>
-        <div class="logo">BARTER VERSE</div>
-        <ul class="nav-links">
-            <li><a href="#how">How It Works</a></li>
-            <li><a href="#explore">Explore Vault</a></li>
-        </ul>
-        <button class="cta-btn">POST GOODS</button>
-    </nav>
-
-    <section class="hero" id="heroSection">
-        <div class="sticky-wrapper">
-            <div class="hero-heading" id="heroText">
-                <h1>SWIPE. MEET. EXCHANGE.</h1>
-                <p>Scroll down to initiate the automated trade agreement</p>
-            </div>
-
-            <div class="assembly-stage">
-                <div class="trade-card card-left" id="cardLeft">
-                    <div class="card-img-placeholder">
-                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#00f2fe" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="4"/></svg>
-                    </div>
-                    <div class="card-info">
-                        <span class="card-tag">OFFERING</span>
-                        <div class="card-title">Leica M3 Vintage</div>
-                        <div class="card-val">Est. Value: $1,200</div>
-                    </div>
-                </div>
-
-                <div class="match-glow" id="matchText">DEAL LOCKED</div>
-
-                <div class="trade-card card-right" id="cardRight">
-                    <div class="card-img-placeholder">
-                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#ff9900" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M6 12h.01M10 12h.01M14 12h.01M18 12h.01M8 16h8"/></svg>
-                    </div>
-                    <div class="card-info">
-                        <span class="card-tag">WANTED</span>
-                        <div class="card-title">Custom Mech Setup</div>
-                        <div class="card-val">Est. Value: $1,180</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="value-bar-container" id="valueBar">
-                <div class="value-bar-fill" id="valueFill"></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" id="how">
-        <h2 class="section-title">EQUIVALENT VALUE ENGINE</h2>
-        <p style="color: #8a8a9e; max-width: 600px;">Trade directly with creators, collectors, and thinkers without using traditional currency.</p>
-        
-        <div class="grid">
-            <div class="feature-card">
-                <div class="feature-icon">⚖️</div>
-                <h3>AI Value Matching</h3>
-                <p>Our algorithms evaluate market trends to ensure both sides bring equal utility to every proposed swap.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">📜</div>
-                <h3>Smart Escrow Agreements</h3>
-                <p>Both parties lock items with verified logistics providers. Goods release only when both users approve incoming shipments.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🤝</div>
-                <h3>Zero Cash Friction</h3>
-                <p>Trade physical items, digital assets, or high-value services directly without transaction taxes or currency conversion fees.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" id="explore">
-        <h2 class="section-title">ACTIVE VAULT SWAPS</h2>
-        <div class="market-scroll">
-            <div class="market-card">
-                <div class="card-img-placeholder">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#00f2fe" stroke-width="1.5"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
-                </div>
-                <div class="card-title">Studio Monitor Headphones</div>
-                <div class="card-val">Looking for: Graphic Tablet</div>
-            </div>
-            <div class="market-card">
-                <div class="card-img-placeholder">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ff9900" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                </div>
-                <div class="card-title">Rare Edition Sneakers</div>
-                <div class="card-val">Looking for: Drone or Action Cam</div>
-            </div>
-            <div class="market-card">
-                <div class="card-img-placeholder">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#00f2fe" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
-                </div>
-                <div class="card-title">Unlocked Flagship Phone</div>
-                <div class="card-val">Looking for: Mirrorless Lens</div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 BARTER VERSE. Decentralized Peer-to-Peer Value Exchange System.</p>
-    </footer>
-
-    <script>
-        const cardLeft = document.getElementById('cardLeft');
-        const cardRight = document.getElementById('cardRight');
-        const matchText = document.getElementById('matchText');
-        const heroText = document.getElementById('heroText');
-        const valueBar = document.getElementById('valueBar');
-        const valueFill = document.getElementById('valueFill');
-        const heroSection = document.getElementById('heroSection');
-
-        function updateAnimation() {
-            const scrollY = window.scrollY;
-            const heroHeight = heroSection.offsetHeight - window.innerHeight;
-            
-            let progress = Math.min(Math.max(scrollY / heroHeight, 0), 1);
-
-            const leftX = -100 + (progress * 100);
-            const leftRot = -25 + (progress * 25);
-            
-            const rightX = 100 - (progress * 100);
-            const rightRot = 25 - (progress * 25);
-
-            cardLeft.style.transform = `translateX(${leftX}vw) rotate(${leftRot}deg)`;
-            cardRight.style.transform = `translateX(${rightX}vw) rotate(${rightRot}deg)`;
-
-            heroText.style.opacity = 1 - (progress * 2.5);
-
-            if (progress > 0.2 && progress < 0.8) {
-                valueBar.style.opacity = 1;
-                valueFill.style.width = `${(progress - 0.2) * 166}%`;
-            } else if (progress >= 0.8) {
-                valueFill.style.width = '100%';
-            } else {
-                valueBar.style.opacity = 0;
-            }
-
-            if (progress > 0.85) {
-                matchText.classList.add('active');
-                cardLeft.style.borderColor = '#00f2fe';
-                cardLeft.style.boxShadow = '0 0 40px rgba(0, 242, 254, 0.6)';
-                cardRight.style.borderColor = '#ff9900';
-                cardRight.style.boxShadow = '0 0 40px rgba(255, 153, 0, 0.6)';
-            } else {
-                matchText.classList.remove('active');
-                cardLeft.style.borderColor = 'rgba(255, 255, 255, 0.15)';
-                cardLeft.style.boxShadow = '0 20px 50px rgba(0,0,0,0.8)';
-                cardRight.style.borderColor = 'rgba(255, 255, 255, 0.15)';
-                cardRight.style.boxShadow = '0 20px 50px rgba(0,0,0,0.8)';
-            }
-        }
-
-        window.addEventListener('scroll', updateAnimation);
-        window.addEventListener('DOMContentLoaded', updateAnimation);
-    </script>
-</body>
-</html>
+        .card
